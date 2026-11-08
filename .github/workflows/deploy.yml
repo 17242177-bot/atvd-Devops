@@ -1,0 +1,25 @@
+name: Deploy Pipeline CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do Código
+      uses: actions/checkout@v3
+
+    - name: Validar Estrutura de Arquivos
+      run: |
+        echo "Verificando se arquivos essenciais existem..."
+        test -f index.html && echo "index.html OK"
+        test -f Dockerfile && echo "Dockerfile OK"
+
+    - name: Disparar Deploy no Render
+      run: |
+        echo "Disparando deploy na nuvem..."
+        curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
