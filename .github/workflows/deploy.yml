@@ -19,6 +19,9 @@ jobs:
         test -f index.html && echo "index.html OK"
         test -f Dockerfile && echo "Dockerfile OK"
 
+    - name: Construir imagem Docker
+      run: docker build -t atvd-devops .    
+
     - name: Disparar Deploy no Render
       run: |
         echo "Disparando deploy na nuvem..."
