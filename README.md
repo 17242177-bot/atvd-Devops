@@ -147,7 +147,7 @@ A integração utiliza o Dockerfile presente no repositório para definir o ambi
 
 O GitHub Actions realiza a solicitação de deploy automaticamente após as alterações enviadas à branch principal.
 
-**URL da aplicação:** [Inserir aqui a URL pública do Render após a validação do deploy]
+**URL da aplicação:** https://atvd-devops-e3cp.onrender.com/
 
 ## 10. Considerações finais
 
